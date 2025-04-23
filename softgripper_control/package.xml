@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
-  <name>softgripper_description</name>
+  <name>softgripper_control</name>
   <version>0.0.1</version>
-  <description>Description package of the softgrippers</description>
+  <description>Control package for the (arduino controlling the) softgrippers</description>
   <maintainer email="l.j.pronk@utwente.nl">Lucas Pronk</maintainer>
   <license>Apache Licence 2.0</license>
 
@@ -11,6 +11,9 @@
 
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>
+
+  <!-- Added -->
+  <depend>std_msgs</depend>
 
   <export>
     <build_type>ament_cmake</build_type>
