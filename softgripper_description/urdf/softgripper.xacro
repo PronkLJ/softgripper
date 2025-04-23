@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<robot name="softgripper" xmlns:xacro="http://wiki.ros.org/xacro">
+
+    <link name="world" />
+    <link name="flange" />
+    <!-- Link to world -->
+    <joint name="base_joint" type="fixed">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <parent link="world"/>
+        <child link="flange" />
+    </joint>    
+
+    <!-- Add soft gripper to end of arm -->
+    <xacro:include filename="$(find softgripper_description)/urdf/softgripper.urdf.xacro"/>
+  
+</robot>
