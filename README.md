@@ -20,5 +20,10 @@ git clone https://github.com/PronkLJ/softgripper
 ros2 launch softgripper_description view_softgrippers.launch.py
 ```
 ## To-do
-* Add physical control of the softgrippers
-* (Optional) implement bending of fingers in simulation
+- [] Add physical control of the softgrippers
+    - [] Create ROS2 node that sends commands via serial.
+    - [] Create Arduino script that can receive commands via serial.
+    - [] Test for multiple pressure valves.
+- [] (Optional) implement bending of fingers in simulation
+
+
