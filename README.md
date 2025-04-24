@@ -5,6 +5,7 @@ Tested in ROS2 Humble Hawksbill.
 
 ## Content
 This repository currently includes the following package:
+* softgripper_control: contains nodes for physically controlling the softgrippers.
 * softgripper_description: describes the softgrippers.
 
 ## Package installation
