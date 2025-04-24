@@ -22,9 +22,8 @@ public:
 
         RCLCPP_INFO(this->get_logger(), "Serial port opened: %s", serial_port_.c_str());
 
-        // Subscribes to the topic that sends the appropriate voltages. By default set to "gripper_cmd", change accordingly.
         subscription_ = this->create_subscription<std_msgs::msg::Float32>(
-            "gripper_cmd", 10, std::bind(&GripperController::voltage_callback, this, std::placeholders::_1)
+            "voltage", 10, std::bind(&GripperController::voltage_callback, this, std::placeholders::_1)
         );
     }
 
@@ -40,7 +39,8 @@ private:
     {
         float voltage = msg->data;
 
-        if (voltage < 0.0 || voltage > 5.0) {
+        //Checks if voltage is within range. Too much air pressure can damage soft grippers.
+        if (voltage < 0.0 || voltage > 2.0) {
             RCLCPP_WARN(this->get_logger(), "Voltage out of range: %f", voltage);
             return;
         }

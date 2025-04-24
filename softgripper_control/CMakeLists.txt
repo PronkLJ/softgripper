@@ -12,6 +12,7 @@ find_package(std_msgs REQUIRED)
 
 add_executable(softgripper_controller src/softgripper_controller.cpp)
 ament_target_dependencies(softgripper_controller rclcpp std_msgs)
+
 install(TARGETS softgripper_controller DESTINATION lib/${PROJECT_NAME})
 
 install(DIRECTORY launch
