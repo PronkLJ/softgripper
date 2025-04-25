@@ -10,6 +10,7 @@ public:
     GripperController()
     : Node("gripper_controller")
     {
+        // Define serial port for Arduino
         this->declare_parameter<std::string>("serial_port", "/dev/ttyUSB0");
         this->get_parameter("serial_port", serial_port_);
 
@@ -39,7 +40,7 @@ private:
     {
         float voltage = msg->data;
 
-        //Checks if voltage is within range. Too much air pressure can damage soft grippers.
+        // Checks if voltage is within range. Too much air pressure can damage soft grippers.
         if (voltage < 0.0 || voltage > 2.0) {
             RCLCPP_WARN(this->get_logger(), "Voltage out of range: %f", voltage);
             return;
