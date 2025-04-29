@@ -10,8 +10,8 @@ public:
     GripperController()
     : Node("gripper_controller")
     {
-        // Define serial port for Arduino
-        this->declare_parameter<std::string>("serial_port", "/dev/ttyUSB0");
+        // Define serial port for Arduino. Change port when necessary
+        this->declare_parameter<std::string>("serial_port", "/dev/ttyACM0");
         this->get_parameter("serial_port", serial_port_);
 
         serial_stream_.open(serial_port_);

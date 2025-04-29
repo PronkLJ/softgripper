@@ -20,6 +20,11 @@ In terminal 1:
 ```console
 ros2 launch softgripper_control softgripper_control.launch.py 
 ```
+If port access is denied, try:
+```console
+sudo chmod a+rw /dev/ttyACM0
+```
+
 In terminal 2:
 
 Closing the softgrippers:
