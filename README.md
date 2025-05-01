@@ -2,7 +2,8 @@
 The packages in this repository allow for the control and digital representation of the softgripper fingers.
 The control of the pressure regulating valves is done via an Arduino Uno.
 
-Tested in ROS2 Humble Hawksbill.
+Tested in ROS2 Humble Hawksbill and with an Arduino Uno.
+The pressure regulation valves used are Festo VEAB-L-26-D18-Q4-V2-1R1.
 
 ## Content
 This repository currently includes the following package:
