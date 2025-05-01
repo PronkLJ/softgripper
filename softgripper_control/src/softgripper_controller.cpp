@@ -1,3 +1,5 @@
+// This program subscribes to the /voltage topic and sends its data to the Arduino via the defined serial port.
+
 #include <rclcpp/rclcpp.hpp>
 #include <std_msgs/msg/float32.hpp>
 #include <string>

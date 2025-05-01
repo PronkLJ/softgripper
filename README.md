@@ -1,5 +1,6 @@
 # Softgripper packages for ROS2 simulation
-The packages in this repository allow for the digital representation of the softgripper fingers.
+The packages in this repository allow for the control and digital representation of the softgripper fingers.
+The control of the pressure regulating valves is done via an Arduino Uno.
 
 Tested in ROS2 Humble Hawksbill.
 
@@ -15,6 +16,9 @@ To install the packages from inside your workspace:
 cd src
 git clone https://github.com/PronkLJ/softgripper
 ```
+To communicate with the Arduino, copy the file valve_control.ino under /softgripper_control/arduino to the Arduino.
+In this program, you can set the correct output pins as desired.
+
 ## Control softgrippers
 In terminal 1:
 ```console
