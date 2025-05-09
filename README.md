@@ -23,7 +23,7 @@ In this program, you can set the correct output pins as desired.
 ## Control softgrippers
 In terminal 1:
 ```console
-ros2 launch softgripper_control softgripper_control.launch.py 
+ros2 launch softgripper_control arduino_communication.launch.py 
 ```
 If port access is denied, try:
 ```console
@@ -34,12 +34,12 @@ In terminal 2:
 
 Closing the softgrippers:
 ```console
-ros2 topic pub --once /voltage std_msgs/msg/Float32 "{data: 1.5}" 
+ros2 run softgripper_control gripper_control --mode closed
 ```
 
 Opening the softgrippers:
 ```console
-ros2 topic pub --once /voltage std_msgs/msg/Float32 "{data: 0.0}" 
+ros2 run softgripper_control gripper_control --mode open
 ```
 
 ## Simulation - view in RViz

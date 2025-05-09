@@ -17,9 +17,6 @@ public:
         msg.data = voltage;
         publisher_->publish(msg);
         RCLCPP_INFO(this->get_logger(), "Published voltage: %.2f", voltage);
-
-        // Shutdown after a short delay to ensure the message is sent
-        rclcpp::shutdown();
     }
 
 private:
@@ -46,7 +43,13 @@ int main(int argc, char * argv[])
     float voltage = (mode == "open") ? 0.0f : 1.5f;
 
     auto node = std::make_shared<GripperCommander>(voltage);
+
+    // Spin briefly to allow the message to be published
     rclcpp::spin_some(node);
 
+    // Short sleep ensures publish gets flushed before shutdown
+    std::this_thread::sleep_for(std::chrono::milliseconds(100));
+
+    rclcpp::shutdown();
     return 0;
 }
