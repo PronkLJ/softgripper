@@ -3,12 +3,12 @@ from launch_ros.actions import Node
 
 def generate_launch_description():
 
-    softgripper_controller = Node(
+    arduino_communication = Node(
         package='softgripper_control',
-        executable='softgripper_controller',
-        name='softgripper_controller'
+        executable='arduino_communication',
+        name='arduino_communication',
     )
 
     return LaunchDescription([
-        softgripper_controller,
+        arduino_communication,
     ])
